@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        
+    </style>
+    <script src="/scripts/snippet-javascript-console.min.js?v=1"></script>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<form>
+    <img style="display:none" src="banner.png"/>
+ <input type="text" id="inp"/>
+  <button type="submit">Save</button>
+</form>
+
+<canvas id="canvas" />
+    <script type="text/javascript">
+        var canvas = document.getElementById('canvas'),
+        ctx = canvas.getContext('2d');
+		canvas.width = $('img').width();
+		canvas.crossOrigin = "Anonymous";
+		canvas.height = $('img').height();
+		ctx.drawImage($('img').get(0), 0, 0);
+		ctx.font = "36pt Industry Bold";
+		$(document).on('input','#inp',function(){
+			//redraw image
+			ctx.clearRect(0,0,canvas.width,canvas.height);
+			ctx.drawImage($('img').get(0), 0, 0);
+			//refill text
+			ctx.fillStyle = "#272727";
+			ctx.fillText($(this).val(),40,80);
+		});
+		$('button').click(function(){
+			console.log(ctx.getImageData(50, 50, 100, 100));
+		});
+    </script>
+</body>
+</html>
