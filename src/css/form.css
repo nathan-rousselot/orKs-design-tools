@@ -1,0 +1,42 @@
+.form input{
+    font-family: "Industry Book";
+    outline: 1px;
+    background: #272727;
+    color: white;
+    width: 10%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px ;
+    border-bottom: 1px solid #777777;
+    text-align: center;
+}
+
+.form input:hover{
+    border-bottom: 1px solid #ed1c24;
+    transition-duration: 1s;
+}
+
+.form button{
+    font-family:"Industry Bold" ;
+    text-transform: uppercase;
+    outline: 0;
+    background: #9b3336;
+    width: 10%;
+    border:0;
+    padding: 15px;
+    color:#FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.form button:hover, .form button:active{
+    background-color: #ed1c24;
+
+}
+.form{
+    margin-top:5%;
+    margin-bottom: 15px;
+}

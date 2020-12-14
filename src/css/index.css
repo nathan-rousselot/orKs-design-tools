@@ -9,6 +9,18 @@ h1 {
     font-family: "Industry Bold";
 }
 
+.label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px;
+    color: white;
+    padding: 8px;
+    font-family: "Industry Bold";
+}
+
+.alpha {background-color: #ed1c24;}
+
 .menu {
     position: absolute;
     top: 0;
@@ -30,6 +42,7 @@ h1 {
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
+    box-shadow: 1px 1px 15px #ed1c24;
 }
 
 .sidenav a {
@@ -43,7 +56,7 @@ h1 {
 }
 
 .sidenav a:hover {
-    color: #f1f1f1;
+    color: #ed1c24;
 }
 
 .sidenav .closebtn {
@@ -53,6 +66,7 @@ h1 {
     font-size: 36px;
     margin-left: 50px;
 }
+
 
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}

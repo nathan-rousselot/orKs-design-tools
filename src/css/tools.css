@@ -1,0 +1,59 @@
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: #e4e4e4;
+    background-image: none;
+}
+
+/* Remove IE arrow */
+select::-ms-expand {
+    display: none;
+}
+
+.select {
+    width: 200px;
+    height: 35px;
+    line-height: 3;
+    background: #dadada;
+    transition: box-shadow 0.2s ease-in-out;
+}
+select {
+    text-align:center;
+    font-weight: bold;
+    flex: 1;
+    padding: 0 .5em;
+    color: #000;
+    cursor: pointer;
+}
+
+.select:hover{
+    box-shadow: 0px 0px 4px #ed1c24
+}
+
+/* Arrow */
+.select::after {
+    content: '\25BC';
+    padding-left: 5px;
+    padding-right: 5px;
+    background: #ed1c24;
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+}
+
+.select:hover::after {
+    color: #ed1c24
+}
+
+.AUCENTRE{
+    margin: 0 auto;
+    margin-top: 10%;
+    text-align: center;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>orKs outils graphiques</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/winter.css">
+    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="../css/tools.css">
+    <script src="/scripts/snippet-javascript-console.min.js?v=1"></script>
+</head>
+<body>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="../../index.html">Accueil</a>
+    <a href="../Pages/tools.html">Outils</a>
+    <a href="#">Support</a>
+    <a href="#">Github</a>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<span class="menu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+<div class="AUCENTRE">
+    <h2>Choisissez le template souhaité:</h2>
+    <form class="form">
+        <select class="select" name="Games" id="Games">
+            <option value="" disabled selected>Selectionnez un jeu</option>
+            <option value="Brawlhalla">Brawlhalla</option>
+            <option value="CallOfDuty">CallOfDuty</option>
+            <option value="Hearthstone">Hearthstone</option>
+            <option value="Legends of Runeterra">Legends of Runeterra</option>
+            <option value="Overwatch">Overwatch</option>
+            <option value="Super Smash Bros. Ultimate">Super Smash Bros. Ultimate</option>
+            <option value="Trackmania">Trackmania</option>
+            <option value="Valorant">Valorant</option>
+        </select>
+        <select class="select" name="Types" id="Types">
+            <option value="" disabled selected>Selectionnez un template</option>
+            <option value="Champion">Champion</option>
+            <option value="Classement">Classement</option>
+            <option value="Resultat">Résultat</option>
+            <option value="Participation">Participation</option>
+            <option value="Recrutement">Recrutement</option>
+            <option value="Lineup">Lineup</option>
+            <option value="Versus">Versus</option>
+            <option value="Participation2">Participation2</option>
+            <option value="Qualifications">Qualifications</option>
+        </select>
+        <br>
+        <button style="margin-top:3px;" type="button" onclick="goToTemplate();" >IT'S OVER 9000</button>
+    </form>
+</div>
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+
+    function goToTemplate(){
+        var jeu = document.getElementById("Games").value;
+        var type = document.getElementById("Types").value;
+        var chemin = "../../src/Templates/"
+        var chemin2 = "/"
+        var ext = ".html"
+        var template = chemin.concat(jeu.concat(chemin2.concat(type.concat(ext))));
+        window.open(template);
+    }
+</script>
+</body>
+</html>

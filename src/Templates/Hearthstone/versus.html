@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>orKs outils graphiques</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/winter.css">
+    <link rel="stylesheet" href="../../css/form.css">
+    <script src="/scripts/snippet-javascript-console.min.js?v=1"></script>
+</head>
+<body>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="../../index.html">Accueil</a>
+    <a href="../Pages/tools.html">Outils</a>
+    <a href="#">Support</a>
+    <a href="#">Github</a>
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <span class="menu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+    <form class="form">
+        <img style="display:none" src="Versus.png"/>
+        <input type="text" id="firstTitle" placeholder="Premier Titre"/>
+        <input type="text" id="subTitle" placeholder="Second Titre"/>
+        <input type="text" id="date" placeholder="Date / Heure"/>
+        <input type="text" id="team1" placeholder="Team 1"/>
+        <input type="text" id="team2" placeholder="Team 2"/>
+        <button  type="button" onclick="insertValue();" >Insérer le texte</button>
+    </form>
+
+<canvas id="canvas" />
+    <script type="text/javascript">
+        var canvas = document.getElementById('canvas'),
+        ctx = canvas.getContext('2d');
+		canvas.width = $('img').width();
+		canvas.crossOrigin = "Anonymous";
+		canvas.height = $('img').height();
+		ctx.drawImage($('img').get(0), 0, 0);
+		ctx.font = "70pt Industry Black";
+		function insertValue(){
+            var firstTitle = (document.getElementById("firstTitle").value).toUpperCase();
+            var date = (document.getElementById("date").value).toUpperCase();
+            var subTitle = (document.getElementById("subTitle").value).toUpperCase();
+            var team1 = (document.getElementById("team1").value).toUpperCase();
+            var team2 = (document.getElementById("team2").value).toUpperCase();
+            //redraw image
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            ctx.drawImage($('img').get(0), 0, 0);
+            //refill text
+            ctx.fillStyle = "#fff";
+            ctx.textAlign = "center";
+            if (team1.length >= 21 || team2.length >= 21){
+                ctx.font = "35pt Industry Black";
+                ctx.fillText(team1,960,449);
+                ctx.fillText(team2,960,720);
+            }
+            else {
+                ctx.font = "70pt Industry Black";
+                ctx.fillText(team1,960,466);
+                ctx.fillText(team2,960,737);
+            }
+            ctx.fillStyle = "#000";
+            ctx.font = "70pt Industry Bold";
+            ctx.fillText(date,960,330);
+            ctx.textAlign = "left";
+            ctx.font = "47pt Industry Bold";
+            ctx.fillText(firstTitle,246,131);
+            ctx.font = "41pt Industry Thin";
+            ctx.fillText(subTitle,246,204);
+        }
+
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+</body>
+</html>
