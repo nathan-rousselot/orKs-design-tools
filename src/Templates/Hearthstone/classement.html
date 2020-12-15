@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../../css/index.css">
     <link rel="stylesheet" href="../../css/winter.css">
     <link rel="stylesheet" href="../../css/form.css">
+    <link rel="stylesheet" href="../../css/fonts.css">
     <script src="/scripts/snippet-javascript-console.min.js?v=1"></script>
 </head>
 <body>
@@ -20,12 +21,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <span class="menu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
     <form class="form">
-        <img style="display:none" src="Versus.png"/>
+        <img style="display:none" src="Classement.png"/>
         <input type="text" id="firstTitle" placeholder="Premier Titre"/>
         <input type="text" id="subTitle" placeholder="Second Titre"/>
-        <input type="text" id="date" placeholder="Date / Heure"/>
-        <input type="text" id="team1" placeholder="Team 1"/>
-        <input type="text" id="team2" placeholder="Team 2"/>
+        <input type="text" id="date" placeholder="Cashprize"/>
+        <input type="text" id="team1" placeholder="Premier Joueur / Équipe"/>
+        <input type="text" id="team2" placeholder="Deuxième Joueur / Équipe"/>
+        <input type="text" id="top1" placeholder="Top 1"/>
+        <input type="text" id="top2" placeholder="Top 2"/>
         <button  type="button" onclick="insertValue();" >Insérer le texte</button>
     </form>
 
@@ -44,25 +47,35 @@
             var subTitle = (document.getElementById("subTitle").value).toUpperCase();
             var team1 = (document.getElementById("team1").value).toUpperCase();
             var team2 = (document.getElementById("team2").value).toUpperCase();
+            var top1 = (document.getElementById("top1").value).toUpperCase();
+            var top2 = (document.getElementById("top2").value).toUpperCase();
             //redraw image
             ctx.clearRect(0,0,canvas.width,canvas.height);
             ctx.drawImage($('img').get(0), 0, 0);
             //refill text
             ctx.fillStyle = "#fff";
-            ctx.textAlign = "center";
+            ctx.textAlign = "left";
             if (team1.length >= 21 || team2.length >= 21){
                 ctx.font = "35pt Industry Black";
-                ctx.fillText(team1,960,449);
-                ctx.fillText(team2,960,720);
+                ctx.fillText(team1,38,416);
+                ctx.fillText(team2,38,679);
+                ctx.textAlign = "right";
+                ctx.fillText(top1,1130,416);
+                ctx.fillText(top2,1130,679);
             }
             else {
                 ctx.font = "70pt Industry Black";
-                ctx.fillText(team1,960,466);
-                ctx.fillText(team2,960,737);
+                ctx.fillText(team1,38,416);
+                ctx.fillText(team2,38,679);
+                ctx.textAlign = "right";
+                ctx.fillText(top1,1130,416);
+                ctx.fillText(top2,1130,679);
+
             }
+            ctx.textAlign = "center"
+            ctx.font = "87.5pt Edo SZ";
+            ctx.fillText(date,1423,416);
             ctx.fillStyle = "#000";
-            ctx.font = "70pt Industry Bold";
-            ctx.fillText(date,960,330);
             ctx.textAlign = "left";
             ctx.font = "47pt Industry Bold";
             ctx.fillText(firstTitle,246,131);
